@@ -62,7 +62,7 @@ function startTimer() {
 }
 
 function checkAnswer(selected, correct) {
-    clearInterval(timer); // Останавливаем тай мер
+    clearInterval(timer); // Останавливаем таймер
     if (selected === correct) {
         alert("Правильно! Молодец!");
     } else {
