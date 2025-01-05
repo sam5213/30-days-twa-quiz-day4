@@ -5,7 +5,9 @@ const bot = new Telegraf(process.env.BOT_TOKEN_30DAYS);
 
 
 bot.start((ctx) => {
-    //TODO
+    ctx.reply("Привет! Давай сыграем в квиз с несклькими вопросами с таймером. ", Markup.inlineKeyboard([
+        Markup.button.webApp("Присупить к квизу", "https://sam5213.github.io/30-days-twa-quiz-day4")]
+    ));
 });
 
 
