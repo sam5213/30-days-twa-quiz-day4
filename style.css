@@ -36,7 +36,7 @@ button:hover {
 
 #quiz {
     margin-top: 20px;
-    background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачный фон для квиза */
+    background-color: rgb(59 72 137 / 75%); /* Полупрозрачный фон для квиза */
     border-radius: 10px; /* Закругленные углы */
     padding: 20px; /* Отступы внутри блока */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Тень для блока */
