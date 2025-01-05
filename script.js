@@ -13,8 +13,7 @@ const questions = [
 
 let currentQuestionIndex = 0;
 let timer;
-const timeLimit = 15;
-
+const timeLimit = 15; // Время на ответ в секундах
 
 function startQuiz() {
     currentQuestionIndex = 0;
@@ -30,7 +29,7 @@ function askQuestion() {
     const optionsDiv = document.getElementById('options');
     optionsDiv.innerHTML = '';
 
-    questions.options.forEach(option => {
+    question.options.forEach(option => {
         const button = document.createElement('button');
         button.innerText = option;
         button.onclick = () => checkAnswer(option, question.answer);
@@ -50,12 +49,12 @@ function startTimer() {
 
         if (timeLeft <= 0) {
             clearInterval(timer);
-            alert("Время вышло! Переход к ледующему вопросу.");
+            alert("Время вышло! Переход к следующему вопросу.");
             currentQuestionIndex++;
-            if (currentQuestionIndex < question.length) {
+            if (currentQuestionIndex < questions.length) {
                 askQuestion();
             } else {
-                alert("Квиз завершен! спасибо за участие.");
+                alert("Квиз завершен! Спасибо за участие.");
                 resetQuiz();
             }
         }
@@ -63,22 +62,22 @@ function startTimer() {
 }
 
 function checkAnswer(selected, correct) {
-    clearInterval(timer);
+    clearInterval(timer); // Останавливаем таймер
     if (selected === correct) {
-        alert("Правильно!");
+        alert("Правильно! Молодец!");
     } else {
-        alert("Неправильно!");
+        alert("Неправильно. Попробуй еще раз!");
     }
     currentQuestionIndex++;
-    if (currentQuestionIndex < question.length) {
+    if (currentQuestionIndex < questions.length) {
         askQuestion();
     } else {
-        alert("Квиз завершен! спасибо за участие.");
+        alert("Квиз завершен! Спасибо за участие.");
         resetQuiz();
     }
 }
 
 function resetQuiz() {
-    document.getElementById('app').style.display = 'none';
-    document.getElementById('quiz').style.display = 'block';
+    document.getElementById('quiz').style.display = 'none';
+    document.getElementById('app').style.display = 'block';
 }
